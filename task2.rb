@@ -2,7 +2,7 @@
 # and returns the string "Hello, "
 # concatenated with the name.
 def hello(name)
-  raise "Not yet implemented"
+    puts "Hello, #{name}"
 end
 
 # Takes a string
@@ -11,7 +11,11 @@ end
 # (For our purposes, a vowel is any of the A, E, I, O, U)
 # NOTE: be sure it works for both upper and lower case and for nonletters!
 def starts_with_vowel?(str)
-  raise "Not yet implemented"
+	if str.size==0
+		return false
+	else
+    	str[0].scan(/[AEIOU]/i).any?
+	end
 end
 
 # Takes a string
@@ -19,5 +23,9 @@ end
 # that is a multiple of 4.
 # NOTE: be sure it returns false if the string is not a valid binary number!
 def binary_multiple_of_4?(str)
-  raise "Not yet implemented"
+    if (str.scan(/[01]/).size==str.size && str.reverse[0..1]=="00"&&str.size>0)
+    	return true
+    else
+    	return false
+    end
 end
