@@ -21,7 +21,7 @@ class BookInStock
   attr_accessor :isbn, :price
 
   def initialize(isbn, price) 
-    if isbn.nil?
+    if isbn.empty?
       raise ArgumentError.new("isbn can not be empty string")
     end 
     if price <= 0
@@ -32,6 +32,6 @@ class BookInStock
   end  
   
   def price_as_string  
-    "$" + @price
+    "$" + sprintf("%.2f", @price)
   end   
 end
